@@ -2,6 +2,8 @@ package com.randradee.gamelib.dtos;
 
 
 import com.randradee.gamelib.entities.Game;
+import com.randradee.gamelib.projections.GameMinProjection;
+import org.springframework.beans.BeanUtils;
 
 public class GameMinDTO {
 
@@ -30,6 +32,10 @@ public class GameMinDTO {
         this.shortDescription = game.getShortDescription();
     }
 
+    public GameMinDTO(GameMinProjection gameMinProjection){
+        BeanUtils.copyProperties(gameMinProjection, this);
+    }
+
     public Long getId() {
         return id;
     }
@@ -48,5 +54,25 @@ public class GameMinDTO {
 
     public String getShortDescription() {
         return shortDescription;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 }

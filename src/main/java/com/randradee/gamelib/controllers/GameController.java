@@ -28,5 +28,4 @@ public class GameController {
     public ResponseEntity<GameDTO> findById(@PathVariable("id") Long id){
         return ResponseEntity.ok().body(gameService.findById(id));
     }
-
 }
