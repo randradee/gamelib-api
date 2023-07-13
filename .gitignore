@@ -35,3 +35,6 @@ build/
 ### Containers ###
 .data
 create.sql
+
+### Deploy ###
+aws/
