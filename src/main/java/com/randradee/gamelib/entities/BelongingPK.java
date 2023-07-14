@@ -9,18 +9,19 @@ import java.util.Objects;
 @Embeddable
 public class BelongingPK {
     @ManyToOne
-    @JoinColumn(name = "game_id")
-    private Game game;
-    @ManyToOne
     @JoinColumn(name = "list_id")
     private GameList list;
+
+    @ManyToOne
+    @JoinColumn(name = "game_id")
+    private Game game;
 
     public BelongingPK() {
     }
 
     public BelongingPK(Game game, GameList list) {
-        this.game = game;
         this.list = list;
+        this.game = game;
     }
 
     public Game getGame() {
